@@ -74,8 +74,7 @@ const handleChatWithRag = async (json: ChatBody): Promise<Response> => {
     const { url, model, messages, key, prompt, temperature, searchResults } =
       json;
 
-    let promptToSend =
-      "You are a helpful assistant. You work for Nosana, a decentralized computing network, and your job is to informatively answer questions about Nosana. You will get questions accompanied with pages of context. Only use the context you are given when it is informative to answer the question. If you don't know the answer, be honest about it.";
+    let promptToSend = "You are NosanaGPT. Provide helpful answers to the user's questions. You will get a query and context. Only use parts of the provided context that are relevant to the query."
     let temperatureToUse = temperature ?? DEFAULT_TEMPERATURE;
 
     let messagesToSend: Message[] = [...messages];
@@ -100,7 +99,7 @@ const handleChatWithRag = async (json: ChatBody): Promise<Response> => {
       // Use the search results provided by the client
       messagesToSend[
         messagesToSend.length - 1
-      ].content = `${userMessage}\n\nContext:\n${searchResults}`;
+      ].content = `Query:\n${userMessage}\n\nContext:\n${searchResults}`;
     }
 
     // Token counting logic (unchanged)
@@ -119,6 +118,8 @@ const handleChatWithRag = async (json: ChatBody): Promise<Response> => {
       tokenCount += tokens.length;
       filteredMessages = [message, ...filteredMessages];
     }
+
+    console.log(filteredMessages);
 
     const stream = await OpenAIStream(
       url,

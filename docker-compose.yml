@@ -33,7 +33,7 @@ services:
     environment:
       - 'OPENAI_API_HOST=http://openchat-server:18888'
       - 'OPENAI_API_KEY=openchat-dummy-key'
-      - 'NEXT_PUBLIC_DEFAULT_TEMPERATURE=0.7'
+      - 'NEXT_PUBLIC_DEFAULT_TEMPERATURE=0.2'
       - 'NEXT_PUBLIC_DEFAULT_SYSTEM_PROMPT="A chat between a curious user and an AI assistant. The AI assistant works step by step to ensure correct and helpful answers are provided to the user, and responds using Markdown."'
 
     networks:

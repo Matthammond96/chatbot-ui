@@ -128,7 +128,7 @@ async function keywordSearch(db: RxDatabase, query: string): Promise<any[]> {
 }
 
 
-export async function similaritySearch(db: RxDatabase, query: string, topK: number = 5) {
+export async function similaritySearch(db: RxDatabase, query: string, topK: number = 2) {
     console.log('Starting similarity search for query:', query);
     
     // Add 'GPU' before 'market' or 'markets' in the query

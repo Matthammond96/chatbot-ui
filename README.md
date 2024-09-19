@@ -37,7 +37,7 @@ Create a .env.local file in the root of the repo with the following content.
 ```bash
 OPENAI_API_HOST=http://localhost:18888
 OPENAI_API_KEY=sk-dummy
-NEXT_PUBLIC_DEFAULT_TEMPERATURE=0.5
+NEXT_PUBLIC_DEFAULT_TEMPERATURE=0.2
 NEXT_PUBLIC_DEFAULT_SYSTEM_PROMPT=" "
 ```
 

@@ -1,12 +1,12 @@
 export const DEFAULT_SYSTEM_PROMPT =
   process.env.NEXT_PUBLIC_DEFAULT_SYSTEM_PROMPT ||
-  "You are MattGPT, a large language model trained by OpenAI. Follow the user's instructions carefully. Respond using markdown.";
+  "You are NosanaGPT. Provide helpful answers to the user's questions. Only use relevant parts of the provided context.";
 
 export const OPENAI_API_HOST =
   process.env.OPENAI_API_HOST || 'https://api.openai.com';
 
 export const DEFAULT_TEMPERATURE = parseFloat(
-  process.env.NEXT_PUBLIC_DEFAULT_TEMPERATURE || '1',
+  process.env.NEXT_PUBLIC_DEFAULT_TEMPERATURE || '0.2',
 );
 
 export const OPENAI_API_TYPE = process.env.OPENAI_API_TYPE || 'openai';
